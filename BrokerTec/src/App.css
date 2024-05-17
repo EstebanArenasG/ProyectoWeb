@@ -37,3 +37,8 @@
   color: #fff;
   transform: scale(1.2);
 }
+#container_signup {
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+}

@@ -1,16 +1,17 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './screens/Home.jsx';
+import SignUp from './screens/SignUp.jsx';
 
-const App = () => {
+function App() {
   return (
-    <div id='container_home'>
-      <h1>Bienvenido a Broker Tec</h1>
-      <h2>¿Qué deseas hacer?</h2>
-      <div id='container_buttons'>
-        <button id='login'>Iniciar Sesión</button>
-        <button id='signup'>Registrarse</button>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/signup' element={<SignUp />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
