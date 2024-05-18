@@ -7,12 +7,13 @@
 #container_home {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: burlywood;
 }
 #container_buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 10px;
 }
 #login {
   background-color: aquamarine;
@@ -40,5 +41,5 @@
 #container_signup {
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
+  background-color: white;
 }
