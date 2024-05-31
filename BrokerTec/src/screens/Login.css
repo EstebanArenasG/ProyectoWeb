@@ -1,0 +1,23 @@
+#root {
+    width: 50%;
+    margin: 0 auto; 
+}
+
+#formlogin { 
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+label {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+button{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+div{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}

@@ -1,44 +1,18 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-#container_home {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-}
+
 #container_buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-#login {
-  background-color: aquamarine;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-}
-#login:hover {
-  background-color: #007bff;
-  color: #fff;
-  transform: scale(1.2);
-}
 
-#signup {
-  background-color: aquamarine;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-}
-#signup:hover {
-  background-color: #007bff;
-  color: #fff;
-  transform: scale(1.2);
-}
-#container_signup {
+#formlogin { 
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
+  text-align: start;
+  height: 100%;
+}
+#loginform{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
 }

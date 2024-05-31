@@ -1,0 +1,39 @@
+#root {
+    width: 50%;
+    margin: 0 auto; 
+}
+#formsignup {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+div1{
+    display: flex;
+    flex-direction: row;
+}
+div11{
+    padding-right: 100px;
+}
+div2{
+    display: flex;
+    flex-direction: row;
+}
+div21{
+    padding-right: 100px;
+}
+div22{
+    padding-top: 20px;
+}
+label {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+button{
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+}
+div{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
