@@ -1,30 +1,29 @@
 import { createConnection } from '../database/database.js';
+
 const Login = async (req, res) => {
-  const connection = await createConnection();
-  const email = req.body.email;
-  const password = req.body.password;
+  try {
+    const connection = await createConnection();
+    const email = req.body.email;
+    const password = req.body.password;
 
-    //Consulta para el correo
-    const query = `SELECT * FROM users WHERE correo = '${email}'`;
-    connection.query(query, (err, results) => {
-    if (err) throw err;
+    const [rows, fields] = await connection.execute(`SELECT * FROM usuario WHERE correo =?`, [email]);
 
-    //Si no se encuentra el usuario, devuelve un error
-    if (results.length === 0) {
+    if (rows.length === 0) {
       res.status(401).send('Correo o contraseña inválidos.');
       return;
     }
 
-    //Consultar contraseña
-    const user = results[0];
-    if (password !== user.contraseña) {
+    const user = rows[0];
+    if (password!== user.contrasena) {
       res.status(401).send('Correo o contraseña inválidos.');
       return;
     }
-    // Si las contraseñas coinciden, devuelve el usuario
-    res.send(user);
-  });
-};
+      res.send(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error interno del servidor');
+  }
+}
 
 export const LoginController = {
     Login,

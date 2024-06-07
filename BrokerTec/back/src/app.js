@@ -35,11 +35,15 @@ app.use(morgan('dev'));
 
 app.use(cors());
 
-// Usar las rutas de autenticación
-app.use(router);
+app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Usar las rutas de autenticación
+app.use(router);
+
+
 
 export default app;
 
