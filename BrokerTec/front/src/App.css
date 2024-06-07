@@ -1,0 +1,18 @@
+
+#container_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#formlogin { 
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  height: 100%;
+}
+#loginform{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
