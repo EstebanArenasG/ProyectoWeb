@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import '../screens/SignUp.css';
 
@@ -7,17 +8,43 @@ const SignupForm = () =>  {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [country, setCountry] = React.useState("");
+  const [countryId, setCountryId] = React.useState(null);
 
   const countries = [
-    { value: "MX", label: "México" },
-    { value: "CO", label: "Colombia" },
-    { value: "AR", label: "Argentina" },
-    { value: "PE", label: "Perú" },
-    { value: "CH", label: "Chile" },
+    { id: 2, label: "México" },
+    { id: 1, label: "Colombia" },
+    { id: 5, label: "Argentina" },
+    { id: 3, label: "Perú" },
+    { id: 4, label: "Chile" },
   ];
 
-  const handleSubmit = (e) => {
+   const handleCountryChange = (e) => {
+    const selectedCountry = e.target.value;
+    const countryObject = countries.find((country) => country.name === selectedCountry);
+    setCountry(selectedCountry);
+    setCountryId(countryObject.id);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/signup', {
+        firstName,
+        lastName,
+        email,
+        password,
+        country,
+      });
+       if (response.status === 200) {
+        // Manejar el registro exitoso
+        console.log('Registro exitoso:', response.data);
+      } else {
+        // Manejar errores de registro
+        console.error('Error durante el registro:', response.data);
+      }
+    } catch (error) {
+      console.error('Error durante el registro:', error);
+    }
   };
 
   return (
@@ -42,7 +69,7 @@ const SignupForm = () =>  {
           <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div21>
           <div22>
-            <select id="country" value={country}onChange={(e) => setCountry(e.target.value)}
+            <select id="country" value={countryId}onChange={(e) => setCountryId(e.target.value)}
               >
               <option value="">Selecciona un país</option>
               {countries.map((c) => (
@@ -64,3 +91,5 @@ const SignupForm = () =>  {
 }
 
 export default SignupForm;
+
+

@@ -19,7 +19,8 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
-import router from './routes/userlogin.routes.js';
+import routerlog from './routes/userlogin.routes.js';
+import routersing from './routes/usersingup.routes.js';
 
 // // Cargar variables de entorno desde el archivo .env
 // dotenv.config();
@@ -37,11 +38,13 @@ app.use(cors());
 
 app.use(express.json());
 
+// Analiza los cuerpos de las solicitudes.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Usar las rutas de autenticación
-app.use(router);
+app.use(routerlog);
+app.use(routersing)
 
 
 
